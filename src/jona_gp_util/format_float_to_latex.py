@@ -16,9 +16,3 @@ def scale_value(value, decimal):
     exp = -decimal
     scaled_val = value / (10 ** exp)
     return scaled_val,exp
-
-def simple_de_format_latex_scaled(val, err,decimals):
-    scaled_val,exp = scale_value(val,decimals)
-    scaled_err,_ = scale_value(err,decimals)
-
-    return rf"\left({scaled_val} \pm {scaled_err}\right)\cdot 10^{{{exp}}}"
